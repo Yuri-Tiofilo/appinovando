@@ -1,3 +1,11 @@
 {
-  "primary": "#25abf2"
+  "primary": "#25ABF2",
+  "blue400": "#007BBC5C",
+  "blue300": "#486698",
+
+  "gray400": "#000029",
+  "gray300": "#7A869A",
+
+  "title": "#002251",
+  "white": "#ffffff"
 }

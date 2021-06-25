@@ -44,7 +44,7 @@ const LoginForm = ({ onSubmit = () => {}, navigation = {} }) => {
             Esqueci minha senha
           </Typography>
           <Button stretch loading={isSubmitting} onPress={handleSubmit}>
-            Enviar
+            Fazer Login
           </Button>
         </>
       )}

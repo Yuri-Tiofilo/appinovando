@@ -3,6 +3,12 @@ import { View, Image } from 'react-native';
 import { useAuth } from 'contexts/auth';
 import LoginForm from 'forms/LoginForm';
 import FormView from 'styles/FormView';
+import {
+  CardFormLogin,
+  ImageContainer,
+  Title,
+  SubTitle,
+} from 'styles/Login/style';
 
 const Login = ({ navigation }) => {
   const { signIn } = useAuth();
@@ -21,14 +27,25 @@ const Login = ({ navigation }) => {
 
   return (
     <FormView>
-      <View style={{ alignItems: 'center', marginBottom: 40 }}>
+      <ImageContainer
+        style={{
+          marginBottom: 20,
+          padding: 20,
+          flex: 1,
+          justifyContent: 'flex-end',
+        }}
+      >
         <Image
-          source={require('images/inovando.png')}
+          source={require('images/logo.png')}
           style={{ width: 150, height: 120 }}
           resizeMode="contain"
         />
-      </View>
-      <LoginForm navigation={navigation} onSubmit={handleSignIn} />
+      </ImageContainer>
+      <CardFormLogin>
+        <Title>Olá! Seja bem vindo</Title>
+        <SubTitle>Insira sua senha para efetuar o login</SubTitle>
+        <LoginForm navigation={navigation} onSubmit={handleSignIn} />
+      </CardFormLogin>
     </FormView>
   );
 };

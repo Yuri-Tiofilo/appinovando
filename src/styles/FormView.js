@@ -3,11 +3,7 @@ import { KeyboardAvoidingView, Platform } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const FormView = ({ children, center = true }) => {
-  const styles = center
-    ? { alignItems: 'center', justifyContent: 'center' }
-    : {};
-
+const FormView = ({ children }) => {
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
@@ -17,11 +13,12 @@ const FormView = ({ children, center = true }) => {
       <ScrollView
         contentContainerStyle={{
           flexGrow: 1,
-          padding: 30,
         }}
         keyboardShouldPersistTaps="handled"
       >
-        <SafeAreaView style={[{ flex: 1 }, styles]}>{children}</SafeAreaView>
+        <SafeAreaView style={[{ flex: 1, justifyContent: 'space-between' }]}>
+          {children}
+        </SafeAreaView>
       </ScrollView>
     </KeyboardAvoidingView>
   );
